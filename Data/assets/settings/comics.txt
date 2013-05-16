@@ -1,0 +1,7 @@
+0 = assets\\comics\\Comic1.jpg;
+1 = assets\\comics\\Comic2.png;
+2 = assets\\comics\\ObjectiveMainPowernode.png;
+3 = assets\\comics\\ObjectiveLaserNode.png;
+4 = assets\\comics\\ObjectiveTurrets.png;
+5 = assets\\comics\\ObjectiveTurretNode.png;
+6 = assets\\comics\\Comic3.png;

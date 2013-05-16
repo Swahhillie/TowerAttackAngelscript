@@ -1,0 +1,30 @@
+#version 150
+
+uniform	mat4 modelMatrix;		// set for all vertices
+uniform	mat4 viewMatrix;		// set for all vertices
+uniform	mat4 projectionMatrix;	// set for all vertices
+
+uniform vec3 _LightPosition;
+
+in vec3 vertex; 				// attribute-input per vertex from vertices
+in vec3 normal;					// attribute-input per normal from normals
+in vec2 uv;
+
+
+smooth out vec2 texCoord; // to fragmentshader
+out float lightIntensity; // to fragmentshader
+
+void main( void ){
+	gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4( vertex, 1.f );
+	texCoord = uv;
+
+	vec4 worldPos = modelMatrix * vec4(vertex, 1.0f);
+    vec3 lightDirection = normalize(_LightPosition - vec3(worldPos));
+
+
+    lightIntensity = dot(vec4(lightDirection, 1.0f),modelMatrix * vec4(normal, 0.0f));
+    float distanceToLight = length(lightDirection);
+
+	lightIntensity /= distanceToLight;
+
+}

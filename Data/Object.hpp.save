@@ -1,0 +1,24 @@
+#ifndef OBJECT_H
+#define OBJECT_H
+
+#include <glm/glm.hpp>
+
+class ShaderProgram;
+class Body;
+
+class Object
+{
+	public:
+		Object();
+		virtual ~Object();
+
+		void setBody( Body * aBody );
+		void update( float)
+		void draw( ShaderProgram * shader );
+
+	private:
+		glm::mat4 transformation;
+		Body * body;
+};
+
+#endif // OBJECT_H

@@ -1,0 +1,25 @@
+#include "Body.hpp"
+
+#include "ShaderProgram.hpp"
+
+Body::Body()
+{
+	//ctor
+}
+
+Body::~Body()
+{
+	//dtor
+}
+
+void Body::draw( ShaderProgram * shader )
+{
+	shader->setVertices( vertices );
+	shader->setNormals( normals );
+	shader->setUvs( uvs );
+	
+	shader->draw();
+	
+	shader->
+	std::cout << vertices.size() << std::endl;
+}

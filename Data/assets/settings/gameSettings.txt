@@ -1,0 +1,97 @@
+
+robotWireCutterHealth = 75;
+robotWireCutterSpawnTime = 0.1f;
+robotWireCutterCost = 5;
+robotWireCutterSpeed = 3.0f;
+robotWireCutterShotsPerSecond = 1.4f;
+robotWireCutterDamage = 10.0f;
+robotWireCutterRange = 1.5f;
+robotWireCutterAttackSound = assets\\sounds\\wireCutterAttack.wav;
+robotWireCutterSoundDuration = 5.0f;
+robotWireCutterString = General_purpose_melee_robot;
+
+robotExplosiveSpawnTime = 1.0;
+robotExplosiveCost = 20;
+robotExplosiveHealth = 10.0;
+robotExplosiveSpeed = 9.0f;
+robotExplosiveShotsPerSecond = 1.0f;
+robotExplosiveDamage = 100.0f;
+robotExplosiveRange = 1.5f;
+robotExplosiveAttackSound = assets\\sounds\\explosiveAttack.wav;
+robotExplosiveSoundDuration = 5.0f;
+robotExplosiveString = A_volatile_and_fast_robot;
+
+robotLaserTurretSpawnTime = 1.0;
+robotLaserTurretCost = 25;
+robotLaserTurretHealth = 100.0;
+robotLaserTurretSpeed = 1.0f;
+robotLaserTurretShotsPerSecond = 1.0f;
+robotLaserTurretDamage = 15.0f;
+robotLaserTurretRange = 4.0f;
+robotLaserTurretAttackSound = assets\\sounds\\laserTurretAttack.wav;
+robotLaserTurretSoundDuration = 5.0f;
+robotLaserTurretString = A_robot_with_a_ranged_attack;
+
+powernodeMainHealth = 100.f;
+powernodeMainRange = 100.0f;
+powernodeTurretHealth = 25.0f;
+powernodeTurretRange = 5.0f;
+powernodeLaserHealth = 100.0f;
+powernodeLaserRange = 100.0f;
+
+hudSize = 0.3f;
+robotIconScale = .4f;
+camSpeed = 12.0f;
+soundVolume = 100.0f;
+zoomSpeed = 1.50f;
+rotateSpeed = 180.0f;
+
+turretLightShotsPerSecond = 0.75f;
+turretLightDamagePerShot = 25.0f;
+turretLightRange = 5.0f;
+turretLightMaxHealth = 100.0f;
+
+turretMediumShotsPerSecond = 0.5f;
+turretMediumDamagePerShot = 50.0f;
+turretMediumRange = 4.5f;
+turretMediumMaxHealth = 150.0f;
+
+turretHeavyShotsPerSecond = 0.25f;
+turretHeavyDamagePerShot = 100.0f;
+turretHeavyRange = 3.0f;
+turretHeavyMaxHealth = 250.0f;
+
+healthbarOffsetY = 1.0f;
+
+backgroundWav = assets\\sounds\\harp.wav;
+laserPulseLightWav = assets\\sounds\\laserPulseLight.wav;
+laserPulseMediumWav = assets\\sounds\\laserPulseMedium.wav;
+laserPulseHeavyWav = assets\\sounds\\laserPulseHeavy.wav;
+HARPSHIT.wav = HARPSHIT.wav;
+
+mainQbarTex = assets\\ui\Queuebar.png;
+mainMenuTex = assets\\ui\\Menubar.png;
+mainFrame = assets\\ui\\Mainframe.png;
+progressBarTex = assets\\ui\\Progressbar.png;
+buildOptionsTex = assets\\ui\\Buildui.png;
+wireCutterIconTex = assets\\ui\\WireCutterIcon.png;
+explosiveIconTex = assets\\ui\\ExplosiveIcon.png;
+laserTurretIconTex = assets\\ui\\LaserTurretIcon.png;
+focusRequestTex = assets\\ui\\RequestFocus.png;
+mainFrameTex = assets\\ui\\Mainframe.png;
+levelReplayTex = assets\\ui\\buttonRestart.png;
+mouseCursorTex = assets\\ui\\mouseCursor.png;
+
+gameFont = assets\\ui\\cour.ttf;
+helpIconTex = assets\\ui\\HelpIcon.png;
+helpTextTex = assets\\ui\\helpText.png;
+
+DefaultRobotHealth = 1000.0f;
+DefaultRobotSpeed = 3.0f;
+DefaultRobotBuildTime = 1.0f;
+
+skyboxAddress = assets\\models\\skybox\\StarryNightPlanet;
+resX = 1024;
+resY = 600;
+fullScreen = 1;
+

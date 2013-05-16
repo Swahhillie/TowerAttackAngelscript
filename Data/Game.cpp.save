@@ -1,0 +1,103 @@
+#include <iostream>
+
+#include "ObjLoader.hpp"
+#include "ShaderProgram.hpp"
+#include "Time.hpp"
+#include "FPS.hpp"
+#include "Camera.hpp"
+#include "Game.hpp"
+#include "Stage.hpp"
+#include "Object.hpp"
+#include "Body.hpp"
+#include "Texture.hpp"
+#include "Behavior.hpp"
+
+Game::Game()
+{
+	window = new sf::Window( sf::VideoMode( 800, 600), "Saxion Game setup" );
+	window->setVerticalSyncEnabled( true );
+
+    // init and check glew for opengl > 1.5
+	std::cout << glGetString( GL_VERSION ) << std::endl;
+	std::cout << "GlewInit : " << (glewInit() == GLEW_OK) << " (should be 1) " << std::endl; //init extended opengl functionality after creating window
+
+	glClearColor( 0.3f, 0.3f, 0.3f, 1.0f );
+	glEnable( GL_DEPTH_TEST );
+	glEnable( GL_TEXTURE_2D );
+}
+
+Game::~Game()
+{
+	//dtor
+}
+
+void Game::build() // building game content: stage
+{
+	//shader = new ShaderProgram( "SimpleShading.VertexShader", "SimpleShading.FragmentShader" );
+	shader = new ShaderProgram( "TexturingShading.VertexShader", "TexturingShading.FragmentShader" );
+	shader->use();
+	std::cout << "Loading Game" << std::endl;
+	stage = new Stage();
+		Camera * camera = new Camera(); // default camera
+		stage->set( camera );
+		Object * rotatingCube = new Object();
+			Body * body = Body::load( "Dice.obj" );
+				Texture * texture = Texture::load( "Dice.jpg" );
+				body->setTexture( texture );
+			Behavior * behavior = new Behavior();
+		rotatingCube->setBody( body );
+		rotatingCube->setBehavior( behavior );
+		Object * controlledCube = new Object();
+			Body * body = Body::load( "Dice.obj" );
+				Texture * texture = Texture::load( "Dice.jpg" );
+				body->setTexture( texture );
+			Behavior * behavior = new Behavior();
+		controlledCube->setBody( body );
+		controlledCube->setBehavior( behavior );
+		
+	stage->add( object );
+}
+
+void Game::run()
+{
+	bool running = true;
+	while ( running ) {
+		Time::update();
+
+		running = control();
+		update( Time::step() );
+		draw();
+
+		FPS::update();
+	}
+}
+
+void Game::stop()
+{
+}
+
+bool Game::control()
+{
+	sf::Event event;
+	while ( window->pollEvent(event) ) {
+		if ( event.type == sf::Event::Closed ) { // Close window : exit
+			window->close();
+			return false;
+		}
+	}
+    return true;
+}
+void Game::update( float step )
+{
+	stage->update( step );
+}
+void Game::draw()
+{
+	// init
+	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT  ); // clear color buffer
+
+
+	stage->draw( shader );
+	window->display();
+}
+

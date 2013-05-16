@@ -1,0 +1,55 @@
+#version 150
+
+uniform	mat4 modelMatrix;		// set for all vertices
+uniform	mat4 viewMatrix;		// set for all vertices
+uniform	mat4 projectionMatrix;	// set for all vertices
+
+uniform vec3 _LightPosition;
+uniform vec3 _AmbientLight;
+uniform vec3 _SpecularLight;
+uniform vec3 _SpecularReflection;
+uniform float _Shininess;
+
+in vec3 vertex; 				// attribute-input per vertex from vertices
+in vec3 normal;					// attribute-input per normal from normals
+in vec2 uv;
+
+
+smooth out vec2 texCoord; // to fragmentshader
+out vec4 theColor; // to fragmentshader
+
+void main( void ){
+	vec3 normalDirection = vec3(modelMatrix * vec4(normal, 0.0));
+
+	vec3 viewDirection = normalize(vec3((viewMatrix * vec4(0,0,0,1)) - vec4(vertex, 1.0)));
+	vec4 worldPos = modelMatrix * vec4(vertex, 1.0);
+	vec3 lightDirection = (_LightPosition - vec3(worldPos));
+
+
+	float distance = length(lightDirection);
+	float attenuation = clamp(1.00 / distance * 6, 0 , 1);
+
+	lightDirection = normalize(lightDirection);
+
+	vec3 ambientLighting = _AmbientLight * vec3(0.2,0.20,0.20);//determine what part of the ambient light is used
+	vec3 diffuseReflection = attenuation * vec3(1.0,1.0,1.0) * vec3(1.0,1.0,1.0) * max(0.00,dot(normalDirection, lightDirection));
+
+	vec3 specularReflection;
+
+	if(dot(normalDirection, lightDirection) < 0.00){ //light is behind object. no highlights
+		specularReflection = vec3(0.00,0.00,0.00);
+	}
+	else{
+		specularReflection = attenuation
+		* _SpecularLight
+		* _SpecularReflection
+		* pow(max(0.0, dot(reflect(-lightDirection,
+		normalDirection), viewDirection)), _Shininess);
+	}
+	theColor = vec4(ambientLighting + diffuseReflection + specularReflection, 1.00);
+	gl_Position = projectionMatrix * viewMatrix * worldPos;
+	texCoord = uv;
+
+
+
+}

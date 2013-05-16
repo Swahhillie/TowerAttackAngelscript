@@ -1,0 +1,23 @@
+#ifndef TIME_H
+#define TIME_H
+
+
+class Time
+{
+	public:
+		Time();
+		
+		static void update();
+		static float now();
+		
+};
+
+static Time::update() 
+{
+	
+}
+
+static float Time::now
+
+
+#endif // TIME_H

@@ -1,0 +1,19 @@
+#version 150
+
+uniform	mat4 modelMatrix;		// set for all vertices
+uniform	mat4 viewMatrix;		// set for all vertices
+uniform	mat4 projectionMatrix;	// set for all vertices
+
+uniform	vec3 lightDirection;	// set for all vertices
+
+in vec3 vertex; 				// attribute-input per vertex from vertices
+in vec3 normal;					// attribute-input per normal from normals
+in vec2 uv;
+
+out vec3 texCoord;
+
+void main( void ){
+	vec4 clipPos =  projectionMatrix * viewMatrix * modelMatrix * vec4( vertex, 1.0 );
+	gl_Position = clipPos.xyww; // place on farplane
+	texCoord = vertex;
+}

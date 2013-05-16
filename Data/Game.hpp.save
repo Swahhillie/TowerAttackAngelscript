@@ -1,0 +1,26 @@
+#ifndef GAME_H
+#define GAME_H
+
+#include "Stage.hpp"
+#include "Object.hpp"
+#include "Body.hpp"
+
+
+class Game
+{
+	public:
+		Game();
+		virtual ~Game();
+
+		void start();
+		void run();
+		void stop();
+	private:
+		int state; // the gamestate determines the current activity. menu, plaing, game over etc
+		Stage * stage; // current stage
+		
+		sf::Window window;
+		
+};
+
+#endif // GAME_H

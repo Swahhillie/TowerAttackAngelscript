@@ -1,0 +1,20 @@
+#version 150
+
+uniform vec4 _Color;
+uniform vec4 _AmbientLight;
+
+uniform sampler2D _mainTex;
+
+smooth in vec2 texCoord;
+in float lightIntensity;
+
+
+out vec4 color;
+
+void main( void ){
+	//color = vec4( lightIntensity, 0.1f, 0.1f, 1.0f );
+
+	color = lightIntensity * texture( _mainTex, texCoord ) * _Color;// * _AmbientLight;
+
+	//color = vec4( texCoord.x, texCoord.y, 0.0f, 0.5f );
+}

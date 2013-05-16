@@ -1,0 +1,14 @@
+#ifndef STAGE_H
+#define STAGE_H
+
+
+class Stage
+{
+	public:
+		Stage();
+		virtual ~Stage();
+	private:
+		std::vector<Object *> objects;
+};
+
+#endif // STAGE_H

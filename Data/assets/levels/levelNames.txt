@@ -1,0 +1,11 @@
+level0_tutMainPower, 0, 10;
+level1_tutLaserPower, 1, 10;
+level2_tutTurret, 2, 100;
+level3_turretPlusNode, 3, 100;
+level4_turretPowerLaser, -1, 100;
+level5_turretMedium, -1, 100;
+level6_Challenge, -1, 100;
+level7_turretHeavy, -1, 100;
+level8_Challenge, 4, 100;
+
+

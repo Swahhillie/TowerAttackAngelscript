@@ -1,0 +1,29 @@
+#version 150
+
+uniform vec4 _Color;
+
+
+uniform sampler2D _mainTex;
+
+smooth in vec2 texCoord;
+
+const float RADIUS = .75;
+const float SOFTNESS = .75;
+
+in vec4 theColor;
+out vec4 color;
+
+void main( void ){
+/*
+	vec2 resolution = vec2(1024, 700);
+	vec2 position = (gl_FragCoord.xy / resolution.xy) - vec2(0.5);
+
+	float len = length(position);
+
+	float vignette = smoothstep(RADIUS, RADIUS - SOFTNESS, len);
+*/
+	vec4 c = texture(_mainTex, texCoord) * theColor * _Color;
+
+	//c.rgb = mix(c.rgb, c.rbg * vignette, 01.0);
+	color =   c;
+}

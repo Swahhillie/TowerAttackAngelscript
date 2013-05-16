@@ -1,0 +1,29 @@
+#version 150
+
+uniform sampler2D _mainTex;
+
+uniform float time;
+
+smooth in vec2 texCoord;
+in float lightIntensity;
+
+varying vec4 worldPos;
+out vec4 color;
+
+void main( void ){
+	//color = vec4( lightIntensity, 0.1f, 0.1f, 1.0f );
+	vec4 startColor;
+	vec4 endColor;
+	if(fract(worldPos.x) > .5){
+		startColor = vec4(1,0,0,1);
+		endColor = vec4(0,1,1,1);
+	}
+	else{
+		endColor = vec4(0,1,0,1);
+		startColor = vec4(0,0,1,1);
+	}
+	color = lightIntensity * mix(startColor, endColor, fract(time) * 2);//texture( tex, texCoord );
+
+
+	//color = vec4( texCoord.x, texCoord.y, 0.0f, 0.5f );
+}

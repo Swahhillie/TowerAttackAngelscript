@@ -1,0 +1,37 @@
+#version 150
+
+uniform vec4 _Color;
+uniform vec4 _AmbientLight;
+
+uniform sampler2D _mainTex;
+uniform sampler2D _altTex;
+
+uniform float time;
+
+uniform float progress;
+uniform float borderWidth;
+
+smooth in vec2 texCoord;
+
+
+out vec4 color;
+
+void main( void ){
+	//vec4 _HealthEmpty = vec4(1,0,0,1);
+	//float range = 1 - borderWidth * 2;
+	//float cutoffPoint = range * progress + borderWidth;
+	/*
+	if(texCoord.x > cutoffPoint && texCoord.x < 1 - borderWidth && texCoord.y > borderWidth && texCoord.y < 1 - borderWidth){
+		//center
+		//if(texCoord.x > progress) discard;
+		color = _HealthEmpty;//texture( _mainTex, texCoord ) * _HealthEmpty;
+	}
+	else{
+		color = texture( _mainTex, texCoord ) * _Color;
+	}
+	*/
+	vec4 colorSample1 = texture(_mainTex, texCoord);
+	vec4 colorSample2 = texture(_altTex, texCoord);
+	color = mix(colorSample1, colorSample2, (sin(time * 3) + 1) /2); //squished sin wave that goes between 0 and 1
+}
+

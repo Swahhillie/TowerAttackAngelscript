@@ -1,0 +1,15 @@
+#include <iostream>
+
+#include "FPS.hpp"
+#include "Time.hpp"
+
+void FPS::update()
+{
+	float time = Time::now();
+	FPS::count++;
+	if ( time - lastTime >= 1.0f ) {
+		std::cout << "FPS " << count << std::endl;
+		count = 0;
+		lastTime = time;
+	}
+}

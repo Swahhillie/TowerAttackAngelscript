@@ -1,0 +1,68 @@
+{
+	"scriptDir" : "scripts",
+	"scripts" : [ "test.as" , "instantiate.as" ],
+	"dummy" : 0,
+	"dummy2" : 1
+}
+
+/*{
+	"settings" : 
+	{
+		"resolution" : [1024, 562],
+		"frameRateLimit" : 60,
+		"verboseMessages" : true,
+		"skipIp": true,
+		"skipPlayerName" : false,
+		"skipPlayerColor" : true,
+		"requireServerConnection" : false,
+		"discoverServers" : true,
+		"masterServerAddress" : "141.105.10.94",
+		"masterServerPort" : 5001,
+		
+		"playerCharacter" : 
+		{
+			"moveSpeed" : 60.00,
+			"acceleration" : 5.00
+		},
+		
+		"server" :
+		{
+			"updatesPerSecond" : 10.0
+		}
+	},
+	"names" : ["David","Bob","Droppie"],
+	"GUI" : 
+	{
+		"fontPath" : "assets\\arial.ttf",
+		"textColor" : [255, 0, 0],
+		"textFields":
+		{
+			
+			"playerPosition" : 
+			{
+				"defaultString" : "Hello world",
+				"position" : [0, 0],
+				"characterSize" : 15
+			},
+			"fps" :
+			{
+				"defaultString" : "0",
+				"position" : [0.9, 0],
+				"characterSize" : 15
+			},
+			"playerList" :
+			{
+				"defaultString" : "Offline",
+				"position" : [1.0, 1.0], //aligned to right bottem, should create a setting for that... something like anchor point
+				"size" : [200, 30],
+				"characterSize" : 15
+			}
+		},
+		"buttons" :
+		{
+		
+		}
+		
+	}
+	
+}*/

@@ -1,0 +1,25 @@
+#version 150
+
+uniform	mat4 modelMatrix;		// set for all vertices
+uniform	mat4 viewMatrix;		// set for all vertices
+uniform	mat4 projectionMatrix;	// set for all vertices
+
+uniform vec3 _LightPosition;
+
+in vec3 vertex; 				// attribute-input per vertex from vertices
+in vec3 normal;					// attribute-input per normal from normals
+in vec2 uv;
+
+
+smooth out vec2 texCoord; // to fragmentshader
+
+
+void main( void ){
+	vec4 position = modelMatrix[3];
+	mat4 mdl = mat4(1.0f);
+	mdl[3] = position;
+
+	gl_Position = projectionMatrix *  viewMatrix * mdl * vec4( vertex, 1.f );
+	//gl_Position = projectionMatrix * (position + vec4(inverse(viewMatrix * modelMatrix)[3].xyz, 0));
+	texCoord = uv;
+}

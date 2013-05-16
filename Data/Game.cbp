@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Tower ATTACK" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Game" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="Tower ATTACK" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="include" />
+			<Add directory="angel/add_on" />
+			<Add directory="angel/source" />
+			<Add directory="angel" />
+		</Compiler>
+		<Linker>
+			<Add option="-Wl,--enable-auto-import" />
+			<Add library="sfml-audio" />
+			<Add library="sfml-graphics" />
+			<Add library="sfml-window" />
+			<Add library="sfml-system" />
+			<Add library="opengl32" />
+			<Add library="glew32" />
+			<Add library="angel\libangelscript.a" />
+			<Add directory="src" />
+		</Linker>
+		<Unit filename="angel/CompileScript.cpp" />
+		<Unit filename="angel/CompileScript.hpp" />
+		<Unit filename="angel/ScriptRunner.cpp" />
+		<Unit filename="angel/ScriptRunner.hpp" />
+		<Unit filename="angel/add_on/scriptarray/scriptarray.cpp" />
+		<Unit filename="angel/add_on/scriptarray/scriptarray.h" />
+		<Unit filename="angel/add_on/scriptbuilder/scriptbuilder.cpp" />
+		<Unit filename="angel/add_on/scriptbuilder/scriptbuilder.h" />
+		<Unit filename="angel/add_on/scriptstdstring/scriptstdstring.cpp" />
+		<Unit filename="angel/add_on/scriptstdstring/scriptstdstring.h" />
+		<Unit filename="angel/add_on/scriptstdstring/scriptstdstring_utils.cpp" />
+		<Unit filename="include/AnimData.hpp" />
+		<Unit filename="include/Animator.hpp" />
+		<Unit filename="include/AstarPathfinding.h" />
+		<Unit filename="include/Body.hpp" />
+		<Unit filename="include/BudgetManager.hpp" />
+		<Unit filename="include/Camera.hpp" />
+		<Unit filename="include/Cell.hpp" />
+		<Unit filename="include/CellManager.hpp" />
+		<Unit filename="include/Collider.hpp" />
+		<Unit filename="include/Component.hpp" />
+		<Unit filename="include/Config.hpp" />
+		<Unit filename="include/ConfigLoader.hpp" />
+		<Unit filename="include/Controller.hpp" />
+		<Unit filename="include/CubeCollider.hpp" />
+		<Unit filename="include/Defender.hpp" />
+		<Unit filename="include/Destructable.hpp" />
+		<Unit filename="include/FPS.hpp" />
+		<Unit filename="include/GUI.hpp" />
+		<Unit filename="include/Game.hpp" />
+		<Unit filename="include/GeneralFunctions.hpp" />
+		<Unit filename="include/Lasergrid.hpp" />
+		<Unit filename="include/Level.hpp" />
+		<Unit filename="include/LevelLoader.hpp" />
+		<Unit filename="include/Object.hpp" />
+		<Unit filename="include/ObjectBank.hpp" />
+		<Unit filename="include/Particle.hpp" />
+		<Unit filename="include/ParticleEffect.hpp" />
+		<Unit filename="include/Plane.hpp" />
+		<Unit filename="include/Powernode.hpp" />
+		<Unit filename="include/Ray.hpp" />
+		<Unit filename="include/RaycastHit.hpp" />
+		<Unit filename="include/RenderMaterial.hpp" />
+		<Unit filename="include/RobotBehaviour.hpp" />
+		<Unit filename="include/RobotComponent.hpp" />
+		<Unit filename="include/RobotController.hpp" />
+		<Unit filename="include/RobotInQ.hpp" />
+		<Unit filename="include/ScriptGlobal.h" />
+		<Unit filename="include/ShaderLoader.hpp" />
+		<Unit filename="include/ShaderProgram.hpp" />
+		<Unit filename="include/Skybox.hpp" />
+		<Unit filename="include/SkyboxRotation.hpp" />
+		<Unit filename="include/Slideshow.hpp" />
+		<Unit filename="include/Sound.hpp" />
+		<Unit filename="include/SphereCollider.hpp" />
+		<Unit filename="include/Stage.hpp" />
+		<Unit filename="include/StringOperations.hpp" />
+		<Unit filename="include/Texture.hpp" />
+		<Unit filename="include/Time.hpp" />
+		<Unit filename="include/Transform.hpp" />
+		<Unit filename="include/Turret.hpp" />
+		<Unit filename="include/UnitTestRaycastPlane.hpp" />
+		<Unit filename="include/WorldToGUI.hpp" />
+		<Unit filename="include/WorldToGUIMessage.hpp" />
+		<Unit filename="include/json/json-forwards.h" />
+		<Unit filename="include/json/json.h" />
+		<Unit filename="shaders/Diffuse.FragmentShader" />
+		<Unit filename="shaders/Diffuse.VertexShader" />
+		<Unit filename="shaders/PointLight.FragmentShader" />
+		<Unit filename="shaders/PointLight.VertexShader" />
+		<Unit filename="shaders/ProgressBar.FragmentShader" />
+		<Unit filename="shaders/ProgressBar.VertexShader" />
+		<Unit filename="shaders/SimpleShading.FragmentShader" />
+		<Unit filename="shaders/SimpleShading.VertexShader" />
+		<Unit filename="shaders/Skybox.FragmentShader" />
+		<Unit filename="shaders/Skybox.VertexShader" />
+		<Unit filename="shaders/Specular.FragmentShader" />
+		<Unit filename="shaders/Specular.VertexShader" />
+		<Unit filename="shaders/TexCoordDistort.FragmentShader" />
+		<Unit filename="shaders/TexCoordDistort.VertexShader" />
+		<Unit filename="shaders/TimeDistort.FragmentShader" />
+		<Unit filename="shaders/TimeDistort.VertexShader" />
+		<Unit filename="shaders/shaderNames.txt" />
+		<Unit filename="src/AnimData.cpp" />
+		<Unit filename="src/Animator.cpp" />
+		<Unit filename="src/AstarPathfinding.cpp" />
+		<Unit filename="src/Body.cpp" />
+		<Unit filename="src/BudgetManager.cpp" />
+		<Unit filename="src/Camera.cpp" />
+		<Unit filename="src/Cell.cpp" />
+		<Unit filename="src/CellManager.cpp" />
+		<Unit filename="src/Collider.cpp" />
+		<Unit filename="src/Component.cpp" />
+		<Unit filename="src/Config.cpp" />
+		<Unit filename="src/ConfigLoader.cpp" />
+		<Unit filename="src/Controller.cpp" />
+		<Unit filename="src/CubeCollider.cpp" />
+		<Unit filename="src/Defender.cpp" />
+		<Unit filename="src/Destructable.cpp" />
+		<Unit filename="src/FPS.cpp" />
+		<Unit filename="src/GUI.cpp" />
+		<Unit filename="src/Game.cpp" />
+		<Unit filename="src/GeneralFunctions.cpp" />
+		<Unit filename="src/Lasergrid.cpp" />
+		<Unit filename="src/Level.cpp" />
+		<Unit filename="src/LevelLoader.cpp" />
+		<Unit filename="src/Object.cpp" />
+		<Unit filename="src/ObjectBank.cpp" />
+		<Unit filename="src/Particle.cpp" />
+		<Unit filename="src/ParticleEffect.cpp" />
+		<Unit filename="src/Plane.cpp" />
+		<Unit filename="src/Powernode.cpp" />
+		<Unit filename="src/Ray.cpp" />
+		<Unit filename="src/RaycastHit.cpp" />
+		<Unit filename="src/RenderMaterial.cpp" />
+		<Unit filename="src/RobotBehaviour.cpp" />
+		<Unit filename="src/RobotComponent.cpp" />
+		<Unit filename="src/RobotController.cpp" />
+		<Unit filename="src/RobotInQ.cpp" />
+		<Unit filename="src/ShaderLoader.cpp" />
+		<Unit filename="src/ShaderProgram.cpp" />
+		<Unit filename="src/Skybox.cpp" />
+		<Unit filename="src/SkyboxRotation.cpp" />
+		<Unit filename="src/Slideshow.cpp" />
+		<Unit filename="src/Sound.cpp" />
+		<Unit filename="src/SphereCollider.cpp" />
+		<Unit filename="src/Stage.cpp" />
+		<Unit filename="src/StringOperations.cpp" />
+		<Unit filename="src/TextLogger.cpp" />
+		<Unit filename="src/Texture.cpp" />
+		<Unit filename="src/Time.cpp" />
+		<Unit filename="src/Transform.cpp" />
+		<Unit filename="src/Turret.cpp" />
+		<Unit filename="src/UnitTestRaycastPlane.cpp" />
+		<Unit filename="src/WorldToGUI.cpp" />
+		<Unit filename="src/WorldToGUIMessage.cpp" />
+		<Unit filename="src/jsoncpp.cpp" />
+		<Unit filename="src/main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
