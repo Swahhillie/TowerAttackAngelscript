@@ -2,9 +2,9 @@
 #define CONFIGLOADER_H
 
 #include <string>
-#include <SFML/System.hpp>
 #include <json/json.h>
 #include <vector>
+#include <sfml/System.hpp>
 
 class ConfigLoader : sf::NonCopyable
 {

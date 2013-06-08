@@ -22,7 +22,7 @@ class CellManager : public Component
 
         static const int WIDTH = 20;
         static const int HEIGHT = 20;
-        static const float CELLSIZE = 1.0f;
+        static constexpr float CELLSIZE = 1.0f;
         void resetCellColors();
         void debugCells();
         const Plane * getCellPlane()const;

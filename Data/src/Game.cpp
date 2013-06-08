@@ -25,11 +25,10 @@
 #include "Config.hpp"
 #include "WorldToGUI.hpp"
 #include "Animator.hpp"
-#include "ScriptRunner.hpp"
-#include "CompileScript.hpp"
 #include <scriptstdstring/scriptstdstring.h>
 #include <scriptbuilder/scriptbuilder.h>
 #include "ScriptGlobal.h"
+#include <GL/glew.h>
 
 
 Game::Game():engine(NULL) {
@@ -86,8 +85,8 @@ void Game::build() {
     controller = new Controller(*window, cellManager, *this);
     mainObject->addComponent(new Sound());
 
-    setupScripting();
 }
+/*
 void Game::setupScripting(){
 
 	int r = 0;
@@ -108,6 +107,7 @@ void Game::setupScripting(){
 
 	runner.run(engine);
 }
+*/
 void Game::createPlanes() {
 
     const Level * firstLevel = levelLoader->load(levelLoader->getCurrentLevel());
@@ -177,7 +177,6 @@ void Game::loadLevel(int levelNumber){
 	budgetManager.setBudget(levelToLoad->budget);
 
 	std::cout << "-------------------loaded " << levelToLoad->levelName << ", number " << levelToLoad->levelNumber << "-------------"<< std::endl;
-	runner.loadLevelScriptFunction(levelToLoad->levelNumber, levelToLoad->levelName);
 
 }
 void Game::createCamera() {

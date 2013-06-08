@@ -340,7 +340,7 @@ void CellManager::debugCells(){
 			cells[i][j]->debugColor();
 }
 Cell * CellManager::getCell(const int x, const int z){
-	if(x < 0 || x >= WIDTH || z < 0 || z >= HEIGHT) return false;
+	if(x < 0 || x >= WIDTH || z < 0 || z >= HEIGHT) return nullptr;
 	else{
 		return cells[x][z];
 	}

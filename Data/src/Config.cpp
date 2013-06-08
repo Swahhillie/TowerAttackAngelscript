@@ -41,7 +41,7 @@ void Config::getSetting(const std::string & fieldName, std::string & value)const
 }
 void Config::getSetting(const std::string & fieldName, float & value)const{
 
-	std::map<const std::string, std::string>::const_iterator it = settings.find(fieldName);
+	auto it = settings.find(fieldName);
 	if(it == settings.end())std::cout <<" no setting with name " << fieldName << std::endl;
 	assert(it != settings.end()); //key must be in the map
 
@@ -180,9 +180,9 @@ bool Config::getAnimation(const std::string & aniName, AnimData & data)const{
 	return false;
 }
 AnimData Config::getAnimation(const std::string & aniName)const{
-	for(int i = 0; i < animations.size(); i ++){
-		if(animations[i].name == aniName){
-			return animations[i];
+	for(auto ani : animations){
+		if(ani.name == aniName){
+			return ani;
 		}
 	}
 	AnimData blank;

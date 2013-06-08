@@ -9,8 +9,6 @@
 #include "Controller.hpp"
 #include <scriptstdstring/scriptstdstring.h>
 #include <scriptbuilder/scriptbuilder.h>
-#include "ScriptRunner.hpp"
-
 //#include <Text.hpp>
 
 class Stage;
@@ -52,7 +50,6 @@ class Game
 		void draw(); // render the whole thing
 		void createPlanes();
 		void createCamera();
-		void setupScripting();
 
 	private:
 		bool focussed;
@@ -65,9 +62,6 @@ class Game
 		Controller * controller;
 		GUI * gui;
 		asIScriptEngine * engine;
-		ScriptRunner runner;
-
-
 		GameState gameState;
 
 		sf::RenderWindow * window; // the window to run the game in
